@@ -37,5 +37,5 @@ def run_bot():
         response = get_response(content, user_id=str(message.author.id))
         await message.channel.send(response)
 
-    token = "MTQ*NDEyMzQ4NDc1Njk2NzU2Nw.GjCgGy.c1BxUYBu7IBK-P3aeZ-nmyR8gwvUE*rpy*Q7rI".replace("*", "5")
+    token = "MTQ*NDEyMzQ4NDc1Njk2NzU2Nw.GPuvoO.sAWRVvuP3mpOoHoGoKRnxPM19_0R3H-KbhIB74".replace("*", "5")
     client.run(token)
