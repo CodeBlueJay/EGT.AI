@@ -178,7 +178,10 @@ TRIGGERS = {
         "patterns": ["gif"],
         "responses": [
             "https://media.discordapp.net/attachments/1112003889928093859/1404606365103821004/attachment.gif?ex=69e16f9d&is=69e01e1d&hm=ed84365e8a9a4b017536ae408d54ccf6a2b5755889cf1e2b9f7ceada822d8d55&=&width=560&height=450",
-            "https://media.discordapp.net/attachments/1250239994610716743/1265155388010135662/speed.gif?ex=69e10685&is=69dfb505&hm=fde704b7519a750983dc5a7e6b44a126f762414254d4e8d360f8e907f128af5d&=&width=416&height=747"
+            "https://media.discordapp.net/attachments/1250239994610716743/1265155388010135662/speed.gif?ex=69e10685&is=69dfb505&hm=fde704b7519a750983dc5a7e6b44a126f762414254d4e8d360f8e907f128af5d&=&width=416&height=747",
+            "https://media.discordapp.net/attachments/1113687108230582302/1233521895119392918/Screenshot_20240418-174244.gif?ex=69e14cc9&is=69dffb49&hm=1cbcbf629cde422aae99c8bad52672bfaee2c8b8eb7760323ef227c1b17e02f8&=&width=905&height=900",
+            "https://media.discordapp.net/attachments/1494125042915872911/1494147931371081778/ezgif.com-video-to-gif-converter.gif?ex=69e18d32&is=69e03bb2&hm=d9d52a1d1bf35b404bca432317188044b63b73aada18cea02e468442c6a85d6e&=&width=564&height=747",
+            "https://media.discordapp.net/attachments/1494125042915872911/1494148101995499700/ezgif.com-video-to-gif-converter_1.gif?ex=69e18d5b&is=69e03bdb&hm=662902fbbd623a6e8a8c5969ae018badfaee1a3a0e614c7de3f797edad91d378&=&width=597&height=594"
         ]
     }
 }
