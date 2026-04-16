@@ -8,7 +8,7 @@ import random
 
 INSULT_KEYWORDS = [
     "fuck", "idiot", "dumb", "shut up", "trash", "useless",
-    "noob", "loser", "retard", "hate you", "suck"
+    "noob", "loser", "retard"
 ]
 
 INSULT_RESPONSES = [
@@ -44,6 +44,20 @@ DEFAULT_RESPONSES = [
     "Bro what",
     "what",
     "bro",
+    "What is this guy yapping about"
+]
+
+SLANG_QUESTIONS = [
+    "bro",
+    "wsg",
+    "wyd",
+    "what you doing",
+    "are we deadass",
+    "deadass",
+    "fr",
+    "huh",
+    "hello?",
+    "yo"
 ]
 
 QUESTION_STARTERS = [
@@ -81,17 +95,22 @@ def detect_insult(text):
 
 def is_question(text):
     words = text.split()
-    
+
     if not words:
         return False
 
-    # Ends with ?
+    # punctuation question
     if text.endswith("?"):
         return True
 
-    # Starts like a question
+    # starter words
     if words[0] in QUESTION_STARTERS:
         return True
+
+    # slang-based questions
+    for phrase in SLANG_QUESTIONS:
+        if phrase in text:
+            return True
 
     return False
 
@@ -99,24 +118,39 @@ def is_question(text):
 def handle_question(text):
     words = text.split()
 
-    # Yes/No style question
-    if words[0] in ["is", "are", "do", "does", "did", "can", "could", "should", "would", "will", "am"]:
+    # slang responses
+    if any(x in text for x in ["wsg", "wyd", "bro"]):
+        return random.choice([
+            "Not much",
+            "Idk just existing",
+            "Chillin"
+        ])
+
+    # yes/no logic
+    if words and words[0] in ["is", "are", "do", "does", "did", "can", "could", "should", "would", "will", "am"]:
         return random.choice(YES_NO_RESPONSES)
 
-    # Open-ended question
     return random.choice(QUESTION_RESPONSES)
+
 # =========================
 # 🔹 Trigger → Responses
 # =========================
 TRIGGERS = {
     "greeting": {
-        "patterns": ["hello", "hi", "hey", "yo", "what's up"],
+        "patterns": ["hello", "hi", "hey", "yo"],
         "responses": [
             "What do you want",
             "Hello I am Eric toy",
             "?",
             "hello",
             "the goat is here"
+        ]
+    },
+    "npc": {
+        "patterns": ["npc"],
+        "responses": [
+            "What!11!!",
+            "I am NOT an npc"
         ]
     },
     "bye": {
@@ -128,16 +162,9 @@ TRIGGERS = {
     "laugh": {
         "patterns": ["lmao", "lol", "lmfao"],
         "responses": [
-            "That isn’t funny",
-            "What’s so funny",
+            "That isn't funny",
+            "What's so funny",
             "This is no laughing matter"
-        ]
-    },
-    "npc": {
-        "patterns": ["npc"],
-        "responses": [
-            "What!11!!",
-            "I am NOT an npc"
         ]
     }
 }
@@ -173,7 +200,7 @@ def detect_intent(user_input):
 
     # Exact match first
     for pattern in ALL_PATTERNS:
-        if pattern in cleaned:
+        if cleaned == pattern or fuzz.ratio(cleaned, pattern) > 95:
             return PATTERN_TO_INTENT[pattern], 100
 
     # Fuzzy match
@@ -233,11 +260,6 @@ def get_response(user_input, user_id="default"):
     # =========================
     # 🔹 Smart fallback
     # =========================
-    most_common = word_frequency.most_common(3)
-
-    if most_common:
-        words = ", ".join([w for w, _ in most_common])
-        return f"what is this guy yapping about"
 
     # Final fallback
     return random.choice(DEFAULT_RESPONSES)
