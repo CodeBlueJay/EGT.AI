@@ -46,6 +46,7 @@ DEFAULT_RESPONSES = [
     "what",
     "bro",
     "What is this guy yapping about",
+    "Ty big boy",
     "https://media.discordapp.net/attachments/1250239994610716743/1265155388010135662/speed.gif?ex=69e10685&is=69dfb505&hm=fde704b7519a750983dc5a7e6b44a126f762414254d4e8d360f8e907f128af5d&=&width=416&height=747",
 ]
 
@@ -144,7 +145,6 @@ TRIGGERS = {
         "patterns": ["hello", "hi", "hey", "yo"],
         "responses": [
             "What do you want",
-            "Hello I am Eric toy",
             "?",
             "hello",
             "the goat is here",
@@ -266,10 +266,6 @@ def get_response(user_input, user_id="default"):
     # Question detection
     if is_question(cleaned):
       return handle_question(cleaned)
-
-    # Keyword-based mini logic
-    if "name" in cleaned:
-        return "I'm eric toy"
 
     if "help" in cleaned:
         return "Oh snap"
