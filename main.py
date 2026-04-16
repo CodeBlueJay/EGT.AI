@@ -7,9 +7,14 @@ from bot import run_bot
 # =========================
 # 🚀 Start Discord Bot ONCE
 # =========================
-if "bot_started" not in st.session_state:
-    threading.Thread(target=run_bot, daemon=True).start()
-    st.session_state.bot_started = True
+
+def start_bot_once():
+    if "bot_started" not in st.session_state:
+        st.session_state.bot_started = True
+        thread = threading.Thread(target=run_bot, daemon=True)
+        thread.start()
+
+start_bot_once()
 
 # =========================
 # 🎨 Page Config
