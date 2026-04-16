@@ -25,7 +25,8 @@ INSULT_RESPONSES = [
     "Mb mb",
     "Stupid idiot",
     "Apologise immediately",
-    "That really hurt my feelings"
+    "That really hurt my feelings",
+    "https://media.discordapp.net/attachments/1112003889928093859/1404606365103821004/attachment.gif?ex=69e16f9d&is=69e01e1d&hm=ed84365e8a9a4b017536ae408d54ccf6a2b5755889cf1e2b9f7ceada822d8d55&=&width=560&height=450"
 ]
 
 MAX_INPUT_CHARS = 100
@@ -44,7 +45,8 @@ DEFAULT_RESPONSES = [
     "Bro what",
     "what",
     "bro",
-    "What is this guy yapping about"
+    "What is this guy yapping about",
+    "https://media.discordapp.net/attachments/1250239994610716743/1265155388010135662/speed.gif?ex=69e10685&is=69dfb505&hm=fde704b7519a750983dc5a7e6b44a126f762414254d4e8d360f8e907f128af5d&=&width=416&height=747",
 ]
 
 SLANG_QUESTIONS = [
@@ -70,12 +72,14 @@ QUESTION_RESPONSES = [
     "what",
     "bro ig",
     "bro obv",
+    "https://media.discordapp.net/attachments/1112003889928093859/1404606365103821004/attachment.gif?ex=69e16f9d&is=69e01e1d&hm=ed84365e8a9a4b017536ae408d54ccf6a2b5755889cf1e2b9f7ceada822d8d55&=&width=560&height=450"
 ]
 
 YES_NO_RESPONSES = [
     "yea",
     "nga no",
     "absolutely not",
+    "https://media.discordapp.net/attachments/1112003889928093859/1404606365103821004/attachment.gif?ex=69e16f9d&is=69e01e1d&hm=ed84365e8a9a4b017536ae408d54ccf6a2b5755889cf1e2b9f7ceada822d8d55&=&width=560&height=450"
 ]
 
 def detect_insult(text):
@@ -143,20 +147,23 @@ TRIGGERS = {
             "Hello I am Eric toy",
             "?",
             "hello",
-            "the goat is here"
+            "the goat is here",
+            "https://media.discordapp.net/attachments/1250239994610716743/1265155388010135662/speed.gif?ex=69e10685&is=69dfb505&hm=fde704b7519a750983dc5a7e6b44a126f762414254d4e8d360f8e907f128af5d&=&width=416&height=747"
         ]
     },
     "npc": {
         "patterns": ["npc"],
         "responses": [
             "What!11!!",
-            "I am NOT an npc"
+            "I am NOT an npc",
+            "https://media.discordapp.net/attachments/1112003889928093859/1404606365103821004/attachment.gif?ex=69e16f9d&is=69e01e1d&hm=ed84365e8a9a4b017536ae408d54ccf6a2b5755889cf1e2b9f7ceada822d8d55&=&width=560&height=450"
         ]
     },
     "bye": {
         "patterns": ["bye", "goodbye", "see ya", "later"],
         "responses": [
             "bye",
+            "https://media.discordapp.net/attachments/1250239994610716743/1265155388010135662/speed.gif?ex=69e10685&is=69dfb505&hm=fde704b7519a750983dc5a7e6b44a126f762414254d4e8d360f8e907f128af5d&=&width=416&height=747"
         ]
     },
     "laugh": {
@@ -165,6 +172,13 @@ TRIGGERS = {
             "That isn't funny",
             "What's so funny",
             "This is no laughing matter"
+        ]
+    },
+    "gif": {
+        "patterns": ["gif"],
+        "responses": [
+            "https://media.discordapp.net/attachments/1112003889928093859/1404606365103821004/attachment.gif?ex=69e16f9d&is=69e01e1d&hm=ed84365e8a9a4b017536ae408d54ccf6a2b5755889cf1e2b9f7ceada822d8d55&=&width=560&height=450",
+            "https://media.discordapp.net/attachments/1250239994610716743/1265155388010135662/speed.gif?ex=69e10685&is=69dfb505&hm=fde704b7519a750983dc5a7e6b44a126f762414254d4e8d360f8e907f128af5d&=&width=416&height=747"
         ]
     }
 }
